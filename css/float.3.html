@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>float学习</title>
+    <style type="text/css">
+        body{
+            margin: 20px;padding: 0;
+            font-family: sans-serif;
+            background-color: #DDF3F7;
+        }
+        .f_body{
+            margin: 0;padding: 0;
+        }
+        .left{
+            height: 400px;
+            width: 200px;
+            float: left;
+            margin: 0 20px;
+            background-color: #DDF3F7;
+        }
+        .left ul{
+            list-style: none;
+            margin: 10px  0px 0px ;
+        }
+        .left li{
+            border-bottom: 1px dotted ;
+            text-align: center;
+            margin: 20px 15px ;
+            padding: 5px;
+        }
+        .left a:link,a:visited{
+            text-decoration: none;
+            color:#333333;
+            background-color: #DDF3F7;
+        }
+        .left a:hover{
+            color: #cd0000;
+        }
+        .middle{
+
+        }
+        .content{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #0082CB;
+            overflow:auto;
+            resize: both;
+        }
+        img{
+            float: left;
+            width: 200px;
+            height: 200px;
+        }
+        .mill{
+            /*width: 200px;*/
+            /*float: right;*/
+        }
+    </style>
+</head>
+<body>
+<div class="f_body">
+    <div class="left">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">BFC</a></li>
+            <li><a href="#">右侧固定的流体布局</a></li>
+            <li><a href="#">单侧固定的流体布局</a></li>
+            <li><a href="#">问题</a></li>
+        </ul>
+    </div>
+    <div class="middle">
+        <div class="content">
+            <img src="img/1.jpg" >
+            <div class="mill">
+                <p>我不太懂什么是改变DOM位置的流体布局和不改变位置的流体布局,我感觉没什么变化,也不知道哪点改变了dom位置.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>float学习</title>
+    <style type="text/css">
+        body{
+            margin: 20px;padding: 0;
+            font-family: sans-serif;
+            background-color: #DDF3F7;
+        }
+        .f_body{
+            margin: 0;padding: 0;
+        }
+        .left{
+            height: 400px;
+            width: 200px;
+            float: left;
+            margin: 0 20px;
+            background-color: #DDF3F7;
+        }
+        .left ul{
+            list-style: none;
+            margin: 10px  0px 0px ;
+        }
+        .left li{
+            border-bottom: 1px dotted ;
+            text-align: center;
+            margin: 20px 15px ;
+            padding: 5px;
+        }
+        .left a:link,a:visited{
+            text-decoration: none;
+            color:#333333;
+            background-color: #DDF3F7;
+        }
+        .left a:hover{
+            color: #cd0000;
+        }
+        .middle{
+
+        }
+        .content{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #0082CB;
+            overflow:auto;
+            resize: both;
+        }
+        img{
+            float: left;
+            width: 200px;
+            height: 200px;
+        }
+        .mill{
+            /*width: 200px;*/
+            /*float: right;*/
+        }
+        .mill a{
+            /*display: inline-block;*/
+            width: 200px;
+            height: 20px;
+            border: 1px solid;
+
+        }
+    </style>
+</head>
+<body>
+<div class="f_body">
+    <div class="left">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="#">BFC</a></li>
+            <li><a href="float.2.html">右侧固定的流体布局</a></li>
+            <li><a href="float.4.html">问题</a></li>
+        </ul>
+    </div>
+    <div class="middle">
+        <div class="content">
+            <P>我理解就是使内联元素块级化,bfc之后就可以有高度,宽度</P>
+            <P>怎样才能形成BFC</p>
+            <P> 1.float的值不为none。</p>
+            <P> 2.overflow的值不为visible。</p>
+            <P>3.display的值为table-cell, table-caption, inline-block中的任何一个。</p>
+            <P>4.position的值不为relative和static。</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
