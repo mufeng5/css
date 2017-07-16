@@ -1,0 +1,48 @@
+/ * http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   许可证：无（公共领域）
+* /
+
+html，body，div，span，applet，object，iframe，
+h1，h2，h3，h4，h5，h6，p，blockquote，pre，
+a，abbr，首字母缩略词，地址，大，引用，代码，
+del，dfn，em，img，ins，kbd，q，s，samp，
+小，罢工，强，sub，sup，tt，var，
+b，u，i，center，
+dl，dt，dd，ol，ul，li，
+字段集，表单，标签，图例，
+表，标题，tbody，tfoot，thead，tr，th，td，
+文章，旁边，画布，细节，嵌入， 
+图，figcaption，footer，标题，hgroup， 
+菜单，导航，输出，红宝石，部分，总结，
+时间，标记，音频，视频{
+	保证金：0;
+	填充：0;
+	border：0;
+	font-size：100％;
+	字体：inherit;
+	vertical-align：baseline;
+}
+/ *旧版浏览器的HTML5显示角色重置* /
+文章，旁边，细节，figcaption，图， 
+页脚，标题，hgroup，menu，nav，section {
+	显示：块;
+}
+身体 {
+	line-height：1;
+}
+ol，ul {
+	list-style：none;
+}
+blockquote，q {
+	报价：无
+}
+blockquote：之前，blockquote：之后，
+q：before，q：after {
+	内容：'';
+	内容：无;
+}
+表{
+	边界崩溃：崩溃
+	border-spacing：0;
+}

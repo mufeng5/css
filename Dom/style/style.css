@@ -1,0 +1,16 @@
+#contain{
+    height: 500px;
+    margin: 0 auto;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    position: relative;
+}
+img{
+    position: absolute;
+    display: block;
+    left: 0px;
+    border-left: 1px solid #ccc;
+    height: 500px;
+    width: 500px;
+}
