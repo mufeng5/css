@@ -1,0 +1,6 @@
+为了更好的向前兼容前缀还是少不了的。
+-webkit    chrome和safari
+-moz     firefox
+-ms    IE
+-o    opera
+

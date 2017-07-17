@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新增标签</title>
+</head>
+<body>
+    <h1>H5新增的一些标签</h1>
+    </p>
+    <h3>mark</h3>
+    <p>"do not forget to buy
+        "
+        <mark>milk</mark>
+        "today.
+        "
+    </p>
+
+    <h3>propress</h3>
+    <progress max="100" value="85">
+        <span>85</span>
+        "%"
+    </progress>
+
+    <h3>time</h3>
+    <p>
+        发布时间
+        <time datetime="2017-10-18T09:00">9:00</time>
+        更新时间
+        <time datetime="2017-10-20T09:00Z" pubdate>9:00</time>
+    </p>
+
+    <h3>wbr</h3>
+    <p>
+        wbr也表示换行,当浏览器不需要换行时就不换行
+        <wbr>
+        需要换行时就换.
+    </p>
+
+    <h3>canvas</h3>
+    <canvas id="can"></canvas>
+    <script>
+        var can=document.getElementById("can");
+        var ctx=can.getContext("2d");
+        ctx.fillStyle="#f00";
+        ctx.fillRect(0,0,100,100);
+    </script>
+    <h3>details</h3>
+    <details open>
+        <summary>xuanze</summary>
+        <ul>
+            <li>111111111111</li>
+            <li>222222222222</li>
+            <li>333333333333</li>
+            <li>444444444444</li>
+        </ul>
+    </details>
+
+    <h3>datalist</h3>
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        <input id="mycar" list="cars">
+    <datalist id="cars">
+        <option value="bbbb">
+            </option>
+        <option value="aaaa">
+            </option>
+        <option value="ccccc">
+            </option>
+        <option value="dddd">
+            </option>
+    </datalist>
+    </form>
+
+    <h3>menu</h3>
+    <menu type="toolbar">
+        <li>
+            <input type="checkbox">
+            red
+        </li>
+        <li>
+            <input type="checkbox">
+            blue
+        </li>
+    </menu>
+
+</body>
+</html>

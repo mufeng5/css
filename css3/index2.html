@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>css3</title>
+    <style type="text/css">
+        .div1{
+            height: 100px;
+            width: 100px;
+            background-color: aquamarine;
+            border-radius: 50% 0 0 50%;
+        }
+        .div2{
+            height: 100px;
+            width: 100px;
+            background-color: aquamarine;
+            box-shadow: 4px 2px 6px #333;      /*inset为内部阴影,默认外部,如果添加多个阴影，只需用逗号隔开即可。*/
+        }
+        .div3{
+            width:100px;
+            height:100px;
+            box-shadow:4px 4px 6px 1px #666,
+            -10px -10px 50px 10px #888 inset;
+            border-radius:50px;
+        }
+        .div4{
+            width:70px;
+            height:70px;
+            border:20px solid;
+            border-image:url(4.jpg) 10 repeat;   /*round(平铺)repeat(重复)stretch(拉伸)。*/
+        }
+        .div5{
+            width: 400px;
+            height: 150px;
+            background-image:linear-gradient(to top left,red,yellow);
+        }
+        .div6{
+            text-overflow:ellipsis;
+            overflow:hidden;
+            white-space:nowrap;
+            width:300px;
+            background:#ccc;
+        }
+        .div7{
+            width: 340px;
+            padding: 30px;
+            font: bold 30px/100% "微软雅黑";
+            background: #C5DFF8;
+            text-shadow: 2px 2px 0 red;
+        }
+    </style>
+
+</head>
+<body>
+<h3>角</h3>
+<div class="div1"></div>
+<h3>阴影</h3>
+<div class="div2"></div>
+<h3>阴影二</h3>
+<div class="div3"></div>
+<h3>图片边框</h3>
+<div class="div4"></div>
+<h3>渐变</h3>
+<div class="div5"></div>
+<h3>text-overflow</h3>
+<div class="div6">文字溢出text-overflow:ellipsis（我是省略号）</div>
+<h3>文字阴影</h3>
+<div class="div7">文字阴影text-shadow</div>
+</body>
+</html>

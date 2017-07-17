@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">    <!--缓存,未联网时显示-->
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新增属性</title>
+    <link rel="icon" href="E:\git\img\4.jpg" type="image/gif" sizes="20*20">    <!--浏览器上小图标-->
+
+    <script defer src=" " onload="alert('a')"></script>   <!--先下载js,等整个页面加载好再运行-->
+    <script async src=" " onload="alert('b')"></script>   <!--下载加载js,但继续加载页面-->
+
+    <script>
+        window.document.designMode="off";   <!--值为on时,整个页面可以随意改动-->
+    </script>
+</head>
+<body>
+    <a media="tv" href="#">电视</a>
+    <a href="#" hreflang="zh" ref="exxternal">外部链接</a>  <!--增加了语言中文,是外部链接-->
+
+    <ol start="20" reversed>  <!--倒序-->
+        <li>coffee</li>
+        <li>tea</li>
+        <li>milk</li>
+    </ol>
+
+    <form data-type="comment" class="contain">
+        <h3>留言板</h3>
+        <label hidden>能看见吗</label>       <!--hidden直接在标签里隐藏-->
+        <p><label>
+                <span>姓名</span>
+                <input tabindex="1">     <!--tabindex表达的是tab键到达的下一个位置-->
+            </label></p>
+        <p><label>
+            <span>邮件</span>
+            <input tabindex="2">
+        </label></p>
+        <p><label>
+            <span>留言</span>
+            <textarea tabindex="3" spellcheck="ture" cols="60" rows="5"></textarea>  <!--自动纠正错误词语-->
+        </label></p>
+
+        <table contenteditable="true">   <!--可以直接在网页上修改-->
+            <tr>
+                <td>数据一</td>
+                <td>数据二</td>
+                <td>数据三</td>
+            </tr>
+        </table>
+        <p contenteditable="true">请你留言</p>
+    </form>
+</body>
+</html>

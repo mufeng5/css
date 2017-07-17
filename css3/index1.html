@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>导航栏</title>
+    <style type="text/css">
+        .nav{
+            width:560px;
+            height: 50px;
+            font:bold 0/50px Arial;
+            text-align:center;
+            margin:40px auto 0;
+            background: #f65f57;
+            border-radius: 5px;
+            box-shadow: 4px 2px 6px #333;
+        }
+        .nav a{
+            display: inline-block;
+            transition: all 0.2s ease-in;
+        }
+        .nav a:hover{
+            transform:rotate(10deg);
+            text-shadow: 1px 1px 0 yellow;
+        }
+
+        .nav li{
+            position:relative;
+            display:inline-block;
+            padding:0 16px;
+            font-size: 13px;
+            text-shadow:1px 2px 4px rgba(0,0,0,.5);
+            list-style: none;
+        }
+        .nav a,
+        .nav a:hover{
+            color:#fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<ul class="nav">
+    <li><a href="">Home</a></li>
+    <li><a href="">About Me</a></li>
+    <li><a href="">Portfolio</a></li>
+    <li><a href="">Blog</a></li>
+    <li><a href="">Resources</a></li>
+    <li><a href="">Contact Me</a></li>
+</ul>
+</body>
+</html>
