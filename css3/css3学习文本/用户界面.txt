@@ -1,0 +1,24 @@
+appearance 属性允许您使元素看上去像标准的用户界面元素。
+默认值：	normal
+JavaScript 语法：	object.style.appearance="button"
+
+normal	将元素呈现为常规元素。
+icon	将元素呈现为图标（小图片）。
+window	将元素呈现为视口。
+button	将元素呈现为按钮。
+menu	将元素呈现为一套供用户选择的选项。
+field	将元素呈现为输入字段。
+
+
+resize 属性规定是否可由用户调整元素的尺寸。
+注释：如果希望此属性生效，需要设置元素的 overflow 属性，值可以是 auto、hidden 或 scroll。
+默认值：	none
+
+JavaScript 语法：	object.style.resize="both"
+
+resize: none|both|horizontal|vertical;
+
+none	用户无法调整元素的尺寸。
+both	用户可调整元素的高度和宽度。
+horizontal	用户可调整元素的宽度。
+vertical	用户可调整元素的高度。

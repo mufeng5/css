@@ -1,0 +1,5 @@
+column-count	规定元素应该被分隔的列数。  2
+column-width    auto/200px 
+column-gap	规定列之间的间隔。  2em
+column-rule     属性设置列之间的宽度、样式和颜色规则。 2px dotted red
+column-span	规定元素应该横跨的列数。 all

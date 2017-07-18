@@ -1,0 +1,12 @@
+border-radius  圆角属性  值x x x x
+box-shadow  阴影属性 值x y x c
+
+background-size 设置背景大小
+background-origin 属性规定背景图片的定位区域。
+背景图片可以放置于 content-box、padding-box 或 border-box 区域。
+
+text-shadow 可向文本应用阴影。
+您能够规定水平阴影、垂直阴影、模糊距离，以及阴影的颜色
+
+word-wrap 属性允许您允许文本强制文本进行换行 - 即使这意味着会对单词进行拆分
+
