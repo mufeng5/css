@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>create new person</title>
+    <script src="E:\git\vue\vue.min.js"></script>
+    <style type="text/css">
+        #app{
+            width: 450px;
+
+        }
+        div{
+            margin: 10px;
+        }
+        .ta{
+            margin: 10px 0px;
+            padding: 10px;
+        }
+        th,td{
+            padding: 10px 20px;
+            margin-left:30px; 
+            width: 40px;
+            height: 20px;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="app">
+    <fieldset>
+        <legend>create new people</legend>
+        <div>
+            <label>name:</label>
+            <input type="text" v-model="newPerson.name">
+        </div>
+        <div>
+            <label>age:</label>
+            <input type="text" v-model="newPerson.age">
+        </div>
+        <div>
+            <label>sex:</label>
+            <select v-model="newPerson.sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div>
+            <button @click="createpp">create</button>
+        </div>
+    <hr>
+    <div class="ta">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(person,index) in people">
+                    <td>{{person.name}}</td>
+                    <td>{{person.age}}</td>
+                    <td>{{person.sex}}</td>
+                    <td><button @click="deletepp(index)">delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </fieldset>
+    </div>
+    </body>
+    <script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            newPerson:{
+                name:"",
+                age:20,
+                sex:"Male"
+            },
+            people: [{
+                name:"丁伟",
+                age:25,
+                sex:"Female"
+            }]
+        },
+        methods:{
+            createpp:function() {
+                this.people.push(this.newPerson);
+                this.newPerson={name:"",age:20,sex:"Male"}
+            },
+            deletepp:function(index) {
+                this.people.splice(index,1);
+            }
+        }
+    })
+
+    </script>
+
+</html>

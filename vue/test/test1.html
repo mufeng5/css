@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="E:\git\vue\vue.min.js"></script>
+        <style type="text/css">
+        .div{
+            width: 100px;
+            height: 100px;
+        }
+        .vi{
+            text-decoration: underline;
+            color:red;
+            font-size: 20px;
+        }
+        </style>
+    </head>
+
+ <body>
+        <div id="app">
+            <h1>内联样式</h1>
+                <div class="div" v-bind:style="firststyle">内联样式1:v-bind</div>
+                <div class="div" style="background:red">内联样式2:style</div>
+            <h1>事件</h1>
+                <div><button @keyup.enter="submit()">按键</button></div>
+            <frame>
+                <label>input:</label>
+                <input v-model="massage" placeholder="编辑我">
+                <p>{{massage}}</p>
+                <label>textarea:</label>
+                <textarea v-model="massage2" placeholder="编辑我"></textarea>
+                <p>{{massage2}}</p>
+
+            <h1>单个复选框：</h1>
+                  <input type="checkbox" id="checkbox" v-model="checked">
+                  <label for="checkbox">{{ checked }}</label>
+
+            <h1>多个复选框：</h1>
+                  <input type="checkbox" id="runoob" value="Runoob" v-model="checkedNames">
+                  <label for="runoob">Runoob</label>
+                  <input type="checkbox" id="google" value="Google" v-model="checkedNames">
+                  <label for="google">Google</label>
+                  <input type="checkbox" id="taobao" value="Taobao" v-model="checkedNames">
+                  <label for="taobao">taobao</label>
+                  <br>
+                  <span>选择的值为: {{ checkedNames }}</span>
+
+            <h1>select列表</h1>
+                  <select v-model="selected">
+                    <option value="">选择一个网站</option>
+                    <option value="www.runoob.com">Runoob</option>
+                    <option value="www.google.com">Google</option>
+                  </select>
+                  <p>选择的网站是: {{selected}}</p>
+            </frame>
+            <div><h1>v-for</h1> 
+                <input v-model="bd" @keyup.enter="yet" placeholder="enter 创建  点击改变样式">
+                <ul>
+                    <li v-for="item in items" v-bind:class="{vi:item.doing}"
+                        @click="dod(item)" >
+                        {{item.label}}
+                    </li>
+                </ul>
+            </div>
+            <div>
+               
+                
+            </div>
+            
+        </div>
+    </body>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                massage:"",
+                massage2:"",
+                checked : false,
+                checkedNames: [],
+                selected:"",
+                bd:"",
+                
+                firststyle:{
+                    background:"blue",
+                    color:"red",
+                    fontSize:"30"
+                },
+                items:[
+                    {
+                        label:"read",
+                        doing:true
+                    },
+                    {
+                         label:"run",
+                        doing:false
+                    }
+                ]
+
+            },
+            methods:{
+                submit(){
+                    alert("hello")
+                },
+                dod:function(item){
+                    item.doing=!item.doing
+                },
+                yet:function(){
+                    this.items.push({
+                        label:this.bd,
+                        doing:false
+                    }),
+                    this.bd=""
+                }
+            }
+
+        })
+    </script>
+
+</html>

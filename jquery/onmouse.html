@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <style type="text/css">
+        .aaron1{
+            width:200px;
+            height:200px;
+            border:1px red solid;
+        }
+    </style>
+</head>
+<body>
+<div class="left">
+    <div class="aaron1">
+        <p>鼠标在绿色区域移动触发mousemove</p>
+        <p>移动的位置：</p>
+    </div>
+    <br/>
+    <input class="fos" type="text"/><br/>
+    <label>请输入:</label><textarea id="txt"></textarea><br/>
+    输出结果:<div class="ss"></div>
+</div>
+<script type="text/javascript">
+    //绑定一个mousemove事件
+    //触发后修改内容
+    $(".aaron1").mousemove(function(e) {
+        $(this).find("p:last").html(e.which+'移动的X位置：' + e.pageX+"<br>"+'移动的Y位置：' + e.pageY)
+    });
+//    $(".fos").focusin(function(e){      //输入框聚焦
+//        $(this).val("lalal").css("border","2px solid red");
+//    })
+    $(".fos").focusout(function(e){      //离开输入框
+        $(this).css("border","2px solid blue");
+    })
+
+    $(".fos").keyup(function(e){      //键盘事件  keydown  keyup
+        alert(e.target.value);
+    })
+//    $(".fos").keypress(function(e){      //键盘事件  keydown  keyup  keypress
+//        alert(e.target.value);
+//    })
+    //on() 多事件绑定    off 销毁事件绑定
+    $("#txt").on({
+        change:function(e){        //change  文本框改变
+            $(".ss").html(e.target.value);},
+        select:function(e){        //select  选中文本框内容
+            alert(e.target.value);}        //value是值,文本内容是textContent
+    })
+
+
+</script>
+</body>
+</html>

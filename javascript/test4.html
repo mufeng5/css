@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        var man={
+//            name:"bobo",
+//            wei:5,
+//            get age(){
+//                return new Date().getFullYear()-1995;
+//            },
+//            set age(bb){
+//                document.write("不能被改变");
+//            }
+//        }
+//        document.write(man.age);
+//        man.age=100;
+//        document.write(man.age);
+
+        function Person() {
+            var age = new Date().getFullYear() - 18;
+            Object.defineProperty(this, "age", {
+                get: function () { alert("内部存储数据为:" + age); return new Date().getFullYear() - age; },
+                set: function (value) { age = value; }
+            });
+        }
+        var p = new Person();
+        p.age = 1999;
+        alert("外部获取到的数据为:" + p.age);
+
+//    function foo(){}      //添加属性
+//    Object.defineProperty(foo.prototype,"z",{
+//        get: function () {
+//                return 1;
+//                }
+//        });
+//    var obj=new foo();    //相当于继承
+//    document.write(obj.z +"<br>");   //obj里没有z,向上遍历,z属于foo
+//    obj.z=10;    //重新赋值
+//    document.write(obj.z+"<br>");   //重新赋值的z在obj,但是不是foo里,foo里z还是1
+//
+//    Object.defineProperty(obj,"z",{     //改变属性值
+//            value:100,configurable:true
+//        });
+//    document.write(obj.z +"<br>");
+//        delete obj.z;
+//    document.write(obj.z +"<br>");
+
+    </script>
+</head>
+<body>
+get set 方法<p />
+get set 与原型链<p />
+在js中类中（Object）中的属性有4个描述起行为的特性：<p />
+Configurable:表示能否通过delete删除属性从而重新定义属性；<p />
+Enumerable：表示能否通过for-in循环返回属性;<p />
+writable：表示能否修改属性的值;<p />
+Value：包含这个属性的数据值（个人认为其作用就是赋值）;<p />
+以上四个属性在不显示调用Object.defineProperty()的时候，前三个默认值都为true，而value为你自己设定的值，如果不设定的话则为undefined。
+</body>
+</html>

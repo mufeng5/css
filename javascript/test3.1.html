@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin:0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            margin-top: 30px;
+            list-style-type: none;
+            margin-bottom: -2px;
+        }
+        li{
+            display: inline-block;
+            text-align: center;
+            border: 1px solid #999;
+            border-bottom: 2px solid #900;
+            padding: 0 1px;
+            height: 30px;
+            width: 60px;
+            line-height: 30px;
+        }
+        ul .con{
+            border-top: 2px solid #900;
+            border-bottom: 2px solid #999;
+        }
+        #content{
+            margin: 0;
+            border: 1px solid #999;
+            border-top: 2px solid #900;
+            width: 300px;
+            height: 100px;
+        }
+        #content div{
+            display:none;
+        }
+        #content .con{
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        function chan(obj){
+            var ll=document.getElementsByTagName("li");
+            var nn=document.getElementsByName("txt");
+            for(var i=0;i<ll.length;i++){
+                if(ll[i] == obj){
+                    ll[i].setAttribute("class","con");
+                    nn[i].setAttribute("class","con");
+                }
+                else{
+                    ll[i].setAttribute("class","");
+                    nn[i].setAttribute("class","");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <ul>
+        <li class="con" onclick="chan(this)"><a href="#">111111</a></li>
+        <li onclick="chan(this)" ><a href="#">222222</a></li>
+        <li onclick="chan(this)"><a href="#">333333</a></li>
+    </ul>
+    <div id="content">
+        <div class="con" name="txt">11111111111111111111111111111111</div>
+        <div name="txt">22222222222222222222222222222222</div>
+        <div name="txt">333333333333333333333333333333</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>TO DO LIST</title>
+        <script src="E:\git\vue\vue.min.js"></script>
+        <style type="text/css">
+        #app{
+            text-align: center;
+            width: 400px;
+            margin: auto;
+        }
+        .vi{
+            text-decoration: underline;
+            color:red;
+            font-size: 20px;
+        }
+        li{
+            /*list-style: none;*/
+        }
+        </style>
+    </head>
+
+ <body>
+        <div id="app" >
+           
+            <div><h1>THIS IS TO DO LIST </h1> 
+                <input v-model="bd" @keyup.enter="yet" placeholder="enter 创建  点击改变样式">
+                <ul>
+                    <li v-for="item in items" v-bind:class="{vi:item.doing}"
+                        @click="dod(item)" >
+                        {{item.label}}
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </body>
+    <script>
+        // import Store from "E:\git\vue\test\store.js"
+        
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                bd:"",
+                items:[
+                    // Store.fetch()
+                    {
+                        label:"read",
+                        doing:true
+                    },
+                    {
+                         label:"run",
+                        doing:false
+                    }
+                ]
+            },
+            watch:{
+                items:{
+                    handler: function (items) {
+                        Store.save(items)
+                    },
+                    deep: true
+                }
+            },
+            methods:{
+                dod:function(item){
+                    item.doing=!item.doing
+                },
+                yet:function(){
+                    this.items.push({
+                        label:this.bd,
+                        doing:false
+                    }),
+                    this.bd=""
+                }
+            }
+
+        })
+    </script>
+
+</html>

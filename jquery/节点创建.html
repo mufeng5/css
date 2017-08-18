@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+        .aaron{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<button class="dk" value="点击创建">点击创建</button>
+<script type="text/javascript">
+
+    $("body").on("click",function(){
+        var div=$("<div class='aaron'>动态创建DIV元素节点</div>")
+        $("body").append(div)
+    });
+</script>
+</body>
+</html>

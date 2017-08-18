@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <style type="text/css">
+        p{
+            border: 1px red solid;
+        }
+        .ddv2 p{
+            display: none;
+        }
+        .ddv4{
+            width: 200px;
+            height: 200px;
+            border: 1px red solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h1>隐藏显示</h1>
+        <h2>hide/show</h2>
+        <div class="ddv1"><p>测试</p></div>
+        <button class="bu1">点击hide</button>
+        <button class="bu2">点击show</button>
+    </div>
+    <script type="text/javascript">
+        $(".bu1").click(function(){
+            $(".ddv1 p:first").hide({
+                duration: 3000,
+                complete: function () {         //complete是回调，意指3秒钟结束后执行
+                    alert('执行3000ms动画完毕')
+                }
+            })
+        });         //toggle  切换
+        $(".bu2").click(function(){
+            $(".ddv1 p:first").show({
+                complete:function(){
+                    $(this).css("height","200px")
+                }
+            });
+        })
+    </script>
+
+    <div class="div2">
+        <h1>下拉</h1>
+        <h2>slideDown/slideUp</h2>
+        <div class="ddv2"><p>测试</p></div>
+        <button class="s1">点击slideDown</button>
+        <button class="s2">点击slideUp</button>
+    </div>
+    <script type="text/javascript">
+        $(".s1").click(function(){
+            $(".ddv2 p:first").slideDown( 3000)
+        });
+        //slideToggle  切换
+        $(".s2").click(function(){
+            $(".ddv2 p:first").slideUp(3000,function(){
+                alert('执行3000ms动画完毕')
+            });
+        })
+    </script>
+    <div class="div3">
+        <h1>淡入淡出</h1>
+        <h2>fadeOut/fadeIn</h2>
+        <div class="ddv3"><p>测试</p></div>
+        <button class="f1">点击fadeOut</button>
+        <button class="f2">点击fadeIn</button>
+        <button class="f3">fade To</button>
+    </div>
+    <script type="text/javascript">
+        $(".f1").click(function(){
+            $(".ddv3 p:first").fadeOut( 3000)
+        });
+        //fadeToggle  切换
+        $(".f2").click(function(){
+            $(".ddv3 p:first").fadeIn(3000,function(){
+                alert('执行3000ms动画完毕')
+            });
+        });
+        $(".f3").click(function(){
+            $(".ddv3 p:first").fadeTo(1000,0.5,function(){
+                    alert('完成透明的0.5')
+            });
+        })
+    </script>
+    <div class="div4">
+        <h1>动画</h1>
+        <h2>animate</h2>
+        <div class="ddv4">测试</div>
+        <button class="a1">点击animate</button>
+    </div>
+    <script type="text/javascript">
+        $(".a1").click(function(){
+            $(".ddv4").animate({
+                height : "50px",
+//                duration: 时间
+            },
+            {step: function(now, fx) {
+                $(this).html('高度的改变值:'+now)}
+             }
+//            {progress:function(now,fx){
+//                    $(this).text("进度:"+arguments[1])
+//                }
+//            },
+            ,1000);
+        })
+    </script>
+    <div>stop()：只会停止第一个动画，第二个第三个继续<br>
+        stop(true)：停止第一个、第二个和第三个动画<br>
+        stop(true ture)：停止动画，直接跳到第一个动画的最终状态</div>
+    <div>
+        jQuery.inArray()函数用于在数组中搜索指定的值，并返回其索引值。如果数组中不存在该值，则返回 -1。<br>
+        jQuery.trim()函数用于去除字符串两端的空白字符<br>
+        .index()方法，从匹配的元素中搜索给定元素的索引值，从0开始计数
+    </div>
+</body>
+</html>
