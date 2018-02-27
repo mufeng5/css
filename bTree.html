@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>二叉树</title>
+</head>
+<body>
+<script type="text/javascript">
+// 二叉树节点
+class Node {
+  constructor(key) {
+    this.key = key
+    this.left = null
+    this.right = null
+  }
+}
+
+// 二叉树
+class BinaryTree{
+  constructor(arr) {
+    const insertNode = (key, root) => {
+      const node = new Node(key)
+      if (!root) return root = node;
+      return this._recusive(node, root)
+    }
+
+    this.tree = arr.reduce((root, key) => insertNode(key, root), null)
+  }
+
+  _recusive(node, root) {
+    if(!root) return root = node;
+    if(node.key < root.key) {
+      root.left = this._recusive(node, root.left);
+    } else root.right = this._recusive(node, root.right)
+
+    return root
+  }
+
+  query(key) {
+    const get = (key, root, step) => {
+      console.log(root.key)
+      step++
+      if(!root) return console.error(key + ' not exist');
+      if(key == root.key) return step;
+      return get(key, key>root.key?root.right:root.left, step)
+    }
+    return get(key, this.tree, 0)
+  }
+}
+
+const tree = new BinaryTree([6,3,5,6,7,8,2])
+console.log(tree)
+
+// 查找某个数字
+console.log('step =', tree.query(2))
+
+</script>
+
+</body>
+</html>
