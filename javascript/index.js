@@ -29,8 +29,10 @@ class Compute{
     for (var i = iteratorRes.length - 1; i >= 0; i--) {
       arr[0] = iteratorRes[i].res
       const tmp = this._recusive(arr)
-      const opt = iteratorRes[i].opt
-      if(tmp) return {x: res, y, opt, eql: tmp}
+      if(tmp) {
+        const opt = iteratorRes[i].opt
+        return {x: res, y, opt, eql: tmp}
+      }
     }
   }
 
